@@ -10,6 +10,7 @@ Library: /home/rffa/Documents/AeroEye-Unity/Temp/BurstOutput/tempburstlibs/arm64
 --target-framework=NetFramework
 --generate-link-xml=Temp/burst.link.xml
 --temp-folder=/home/rffa/Documents/AeroEye-Unity/Temp/Burst
+--debug=LineOnly
 --key-folder=/home/rffa/Unity/Hub/Editor/6000.3.26f1/Editor/Data/PlaybackEngines/AndroidPlayer
 --decode-folder=/home/rffa/Documents/AeroEye-Unity/Library/Burst
 --output=/home/rffa/Documents/AeroEye-Unity/Temp/BurstOutput/tempburstlibs/arm64-v8a/lib_burst_generated
@@ -126,6 +127,7 @@ Library: /home/rffa/Documents/AeroEye-Unity/Temp/BurstOutput/tempburstlibs/arm64
 --target-framework=NetFramework
 --generate-link-xml=Temp/burst.link.xml
 --temp-folder=/home/rffa/Documents/AeroEye-Unity/Temp/Burst
+--debug=LineOnly
 --key-folder=/home/rffa/Unity/Hub/Editor/6000.3.26f1/Editor/Data/PlaybackEngines/AndroidPlayer
 --decode-folder=/home/rffa/Documents/AeroEye-Unity/Library/Burst
 --output=/home/rffa/Documents/AeroEye-Unity/Temp/BurstOutput/tempburstlibs/arm64-v8a/lib_burst_generated
@@ -218,6 +220,7 @@ Library: /home/rffa/Documents/AeroEye-Unity/Temp/BurstOutput/tempburstlibs/arm64
 --float-mode=Fast
 --generate-link-xml=Temp/burst.link.xml
 --temp-folder=/home/rffa/Documents/AeroEye-Unity/Temp/Burst
+--debug=LineOnly
 --key-folder=/home/rffa/Unity/Hub/Editor/6000.3.26f1/Editor/Data/PlaybackEngines/AndroidPlayer
 --decode-folder=/home/rffa/Documents/AeroEye-Unity/Library/Burst
 --output=/home/rffa/Documents/AeroEye-Unity/Temp/BurstOutput/tempburstlibs/arm64-v8a/lib_burst_generated
