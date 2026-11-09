@@ -112,3 +112,6 @@ InitTestScene*.unity*
 
 # Auto-generated cache in Assets folder
 /[Aa]ssets/[Ss]ceneDependencyCache*
+
+AeroEye_BurstDebugInformation_DoNotShip
+run_mono_BackUpThisFolder_ButDontShipItWithYourGame

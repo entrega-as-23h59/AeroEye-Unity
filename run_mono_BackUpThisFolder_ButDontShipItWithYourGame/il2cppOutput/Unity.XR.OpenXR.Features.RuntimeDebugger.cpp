@@ -331,7 +331,7 @@ IL2CPP_EXTERN_C void DEFAULT_CALL EndDataAccess();
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 89329
+// Method Definition Index: 90765
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t RuntimeDebuggerOpenXRFeature_HookGetInstanceProcAddr_m07B1D4EC990E11D9C93C633FA0AC92376B89C069 (RuntimeDebuggerOpenXRFeature_t1E3C60D2636DEC25D95E63BB3300DBFC5E9057BA* __this, intptr_t ___0_func, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -377,7 +377,7 @@ IL_0045:
 		return L_7;
 	}
 }
-// Method Definition Index: 89330
+// Method Definition Index: 90766
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RuntimeDebuggerOpenXRFeature_RecvMsg_m537C6529B33C9B9FFE3149ADE159E9F043597461 (RuntimeDebuggerOpenXRFeature_t1E3C60D2636DEC25D95E63BB3300DBFC5E9057BA* __this, MessageEventArgs_t34F726E6463615C0A460FB5CBCCB92F84D83D4F9* ___0_args, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -510,7 +510,7 @@ IL_008b:
 		return;
 	}
 }
-// Method Definition Index: 89331
+// Method Definition Index: 90767
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t RuntimeDebuggerOpenXRFeature_Native_HookGetInstanceProcAddr_m63034518FDB23935595C17400494BF5120A3EDA4 (intptr_t ___0_func, uint32_t ___1_cacheSize, uint32_t ___2_perThreadCacheSize, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -533,7 +533,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t RuntimeDebuggerOpenXRFeature_Native_
 
 	return returnValue;
 }
-// Method Definition Index: 89332
+// Method Definition Index: 90768
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool RuntimeDebuggerOpenXRFeature_Native_GetDataForRead_m1D950D9D6FA25CFCD6321BB58E1690B42A054B44 (intptr_t* ___0_ptr, uint32_t* ___1_size, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -556,7 +556,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool RuntimeDebuggerOpenXRFeature_Native_GetD
 
 	return static_cast<bool>(returnValue);
 }
-// Method Definition Index: 89333
+// Method Definition Index: 90769
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RuntimeDebuggerOpenXRFeature_Native_GetLUTData_m94F902315D914E2DED4071F1B385558EA0DA5CF7 (intptr_t* ___0_ptr, uint32_t* ___1_size, uint32_t ___2_offset, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -578,7 +578,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RuntimeDebuggerOpenXRFeature_Native_GetL
 	#endif
 
 }
-// Method Definition Index: 89334
+// Method Definition Index: 90770
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RuntimeDebuggerOpenXRFeature_Native_StartDataAccess_mCD9F234636475B86203DAE251DD3B60268EAB0BA (const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -600,7 +600,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RuntimeDebuggerOpenXRFeature_Native_Star
 	#endif
 
 }
-// Method Definition Index: 89335
+// Method Definition Index: 90771
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RuntimeDebuggerOpenXRFeature_Native_EndDataAccess_m8B9B950ACB83A084E1A149A6391C1BF6DD08704D (const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -622,7 +622,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RuntimeDebuggerOpenXRFeature_Native_EndD
 	#endif
 
 }
-// Method Definition Index: 89336
+// Method Definition Index: 90772
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RuntimeDebuggerOpenXRFeature__ctor_m2DC84C4F7091238BD265B1B96D5719203C46C393 (RuntimeDebuggerOpenXRFeature_t1E3C60D2636DEC25D95E63BB3300DBFC5E9057BA* __this, const RuntimeMethod* method) 
 {
 	{
@@ -636,7 +636,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RuntimeDebuggerOpenXRFeature__ctor_m2DC8
 		return;
 	}
 }
-// Method Definition Index: 89337
+// Method Definition Index: 90773
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RuntimeDebuggerOpenXRFeature__cctor_m9062996D2DCC73AA119173F300D1FE7A74180B42 (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
