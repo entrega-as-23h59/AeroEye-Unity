@@ -922,7 +922,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98d1da8ef33c2d0b1a8c6244e8615f09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LivreStreamReceiver
-  whepUrl: http://127.0.0.1:8889/test/whep
+  whepUrl: http://192.168.73.166:8889/test/whep
   targetRenderTexture: {fileID: 8400000, guid: 48ecaeb2a3573ae1b85fccebeb5c9440, type: 2}
   iceGatheringTimeout: 3
   logCodecs: 0
