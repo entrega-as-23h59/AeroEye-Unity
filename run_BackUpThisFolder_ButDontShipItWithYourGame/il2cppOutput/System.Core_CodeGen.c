@@ -7,6 +7,7 @@
 
 
 
+extern void SR_GetString_m2213C501E26D6A1AE8D0644E9685AF8A4204CA7F (void);
 extern void SR_Format_m7198B645F5C0A5E33F30AEF003C1F1D1415A9F86 (void);
 extern void Error_ArgumentNull_m1141D2C9AF8AB6ACC45E7488789598C5283D4EEE (void);
 extern void Error_ArgumentOutOfRange_m7B22062E664153625DA782374A7CB9CBD3B2C01D (void);
@@ -38,8 +39,49 @@ extern void BitHelper__ctor_m795A92E9A03F57547FD78A8E50F730C2778DDD19 (void);
 extern void BitHelper_MarkBit_m12EFF71C5444F4E4D076F514C0C0723B39E50F86 (void);
 extern void BitHelper_IsMarked_m0A02826959B4EF6381B8F6C7DF0EDBFC55EE8EF2 (void);
 extern void BitHelper_ToIntArrayLength_m59204C3775D26A8B9532246C2F384C92D02E713C (void);
-static Il2CppMethodPointer s_methodPointers[287] = 
+extern void ReaderWriterCount__ctor_m8FE7B774A506545AF710639DB53F7677A2FA658A (void);
+extern void ReaderWriterLockSlim_InitializeThreadCounts_m7A12BC0D8F0D8C70EC8CA19F435EEEDAE5475A41 (void);
+extern void ReaderWriterLockSlim__ctor_m617A86382C7F076BC04E68726F50961C799688E8 (void);
+extern void ReaderWriterLockSlim__ctor_m19E2A503BBF4DF37E4C601EC1E745380EF945F0C (void);
+extern void ReaderWriterLockSlim_IsRWEntryEmpty_m34743FF639EF9B44D704FC98D3DEA99CFD634E95 (void);
+extern void ReaderWriterLockSlim_IsRwHashEntryChanged_mCCC27B0221422991C4F5A2CE35263EBC24CB8402 (void);
+extern void ReaderWriterLockSlim_GetThreadRWCount_m693F7FFBBFB98DEF312E4B3A200DA95266CA4E96 (void);
+extern void ReaderWriterLockSlim_EnterReadLock_m010CB4F0FC253BB5EC9BE8D54EBB5C4FDA778C39 (void);
+extern void ReaderWriterLockSlim_TryEnterReadLock_m5CB81D34821FE3C460F14CB964434C6A23F4E6EA (void);
+extern void ReaderWriterLockSlim_TryEnterReadLock_m8F3763D7B2516130AD02F7E09AD088C366EF3D11 (void);
+extern void ReaderWriterLockSlim_TryEnterReadLockCore_m5756F423F2155A6B414F8C40A249143492E1C3B5 (void);
+extern void ReaderWriterLockSlim_ExitReadLock_m49891BB1D1FA606B9EBD354D575D7F1ECBD53E87 (void);
+extern void ReaderWriterLockSlim_LazyCreateEvent_m4D2DFCB1AD5A749408939AA0D12B7C3959A36923 (void);
+extern void ReaderWriterLockSlim_WaitOnEvent_mFF3B7C48254F2742AED6916DD059ACB2240A78B3 (void);
+extern void ReaderWriterLockSlim_ExitAndWakeUpAppropriateWaiters_m43EB7B2724EC44E2F0B4E3CA6A51752345978E90 (void);
+extern void ReaderWriterLockSlim_ExitAndWakeUpAppropriateWaitersPreferringWriters_m2EE29EE42CEA6142CA8C741BC74CFBE4483E5CA8 (void);
+extern void ReaderWriterLockSlim_ExitAndWakeUpAppropriateReadWaiters_m19BFCEE3D042633B1F106BBD76E28DA69271606D (void);
+extern void ReaderWriterLockSlim_SetWritersWaiting_mEBE801FBDAFD33AF1B8E3CE71F0AD0C9CDA69902 (void);
+extern void ReaderWriterLockSlim_ClearWritersWaiting_m7587122D0BAD6384DE3B38DB6BF7D38B364A4935 (void);
+extern void ReaderWriterLockSlim_SetUpgraderWaiting_m5C7C47EBCA531D201CA72CB27D0548F71375BCAC (void);
+extern void ReaderWriterLockSlim_ClearUpgraderWaiting_m214E8B0780542079CB3D9D5C28C58C47A72E91E4 (void);
+extern void ReaderWriterLockSlim_GetNumReaders_m300EBD28D2300167E37C0F67AD04AF7BE87C1DB1 (void);
+extern void ReaderWriterLockSlim_EnterMyLock_mDB590C9A0A55830B1C347DAB0A3F4972E9F0DE59 (void);
+extern void ReaderWriterLockSlim_EnterMyLockSpin_mC785B7BB91A152B37FF1115AFA5D752AC6DBE9F6 (void);
+extern void ReaderWriterLockSlim_ExitMyLock_mA7506AF402F9AA6241ABA227DABFF68BB9D5FF7B (void);
+extern void ReaderWriterLockSlim_SpinWait_mFFFC84F8CF5AA3863BEE5CD292FE63B335A5D11B (void);
+extern void ReaderWriterLockSlim_Dispose_mCC076068D0C8A9EF92177147A713C71006A9CD05 (void);
+extern void ReaderWriterLockSlim_Dispose_mA894FFFD0829F6CEDD8318482F57D2A5FCFD5661 (void);
+extern void ReaderWriterLockSlim_get_IsReadLockHeld_mFF28229B26471192A3B8B195EE1C85509B5EA029 (void);
+extern void ReaderWriterLockSlim_get_IsUpgradeableReadLockHeld_mBDFD4377C488FD48B7E211ADE5F5CDEEFD78E1CF (void);
+extern void ReaderWriterLockSlim_get_IsWriteLockHeld_m2F8585FFD00B88CA788152EA5E0BF460B28782A7 (void);
+extern void ReaderWriterLockSlim_get_RecursiveReadCount_mA7709352D9817A46AFE62AD5CF94631E15FB1067 (void);
+extern void ReaderWriterLockSlim_get_RecursiveUpgradeCount_mFF4BF2756AE36B12E7822FAE7BAB8B7CDEF4D41D (void);
+extern void ReaderWriterLockSlim_get_RecursiveWriteCount_m51147A8E3CA34D7D6EDC8986BB8518AE7CE16145 (void);
+extern void ReaderWriterLockSlim_get_WaitingReadCount_mD79E93CABC9BFBA4AB306193DDF8CE90F1818C92 (void);
+extern void ReaderWriterLockSlim_get_WaitingUpgradeCount_m13892A21F7EF1D7ED202D186B2E7B2B6C400F388 (void);
+extern void ReaderWriterLockSlim_get_WaitingWriteCount_m8FE677BDB0E776125691C0A4C1A74B5B8637D246 (void);
+extern void TimeoutTracker__ctor_mBFE73B99C5BBB93D251DF9731B9C5D824F30CDCE (void);
+extern void TimeoutTracker_get_RemainingMilliseconds_mDAA8A0E545F8E28D3688095CA346B0A04337BC23 (void);
+extern void TimeoutTracker_get_IsExpired_m5E08DCC01117EF66ADEBA5472B27833577289813 (void);
+static Il2CppMethodPointer s_methodPointers[328] = 
 {
+	SR_GetString_m2213C501E26D6A1AE8D0644E9685AF8A4204CA7F,
 	SR_Format_m7198B645F5C0A5E33F30AEF003C1F1D1415A9F86,
 	Error_ArgumentNull_m1141D2C9AF8AB6ACC45E7488789598C5283D4EEE,
 	Error_ArgumentOutOfRange_m7B22062E664153625DA782374A7CB9CBD3B2C01D,
@@ -327,14 +369,64 @@ static Il2CppMethodPointer s_methodPointers[287] =
 	NULL,
 	NULL,
 	NULL,
+	ReaderWriterCount__ctor_m8FE7B774A506545AF710639DB53F7677A2FA658A,
+	ReaderWriterLockSlim_InitializeThreadCounts_m7A12BC0D8F0D8C70EC8CA19F435EEEDAE5475A41,
+	ReaderWriterLockSlim__ctor_m617A86382C7F076BC04E68726F50961C799688E8,
+	ReaderWriterLockSlim__ctor_m19E2A503BBF4DF37E4C601EC1E745380EF945F0C,
+	ReaderWriterLockSlim_IsRWEntryEmpty_m34743FF639EF9B44D704FC98D3DEA99CFD634E95,
+	ReaderWriterLockSlim_IsRwHashEntryChanged_mCCC27B0221422991C4F5A2CE35263EBC24CB8402,
+	ReaderWriterLockSlim_GetThreadRWCount_m693F7FFBBFB98DEF312E4B3A200DA95266CA4E96,
+	ReaderWriterLockSlim_EnterReadLock_m010CB4F0FC253BB5EC9BE8D54EBB5C4FDA778C39,
+	ReaderWriterLockSlim_TryEnterReadLock_m5CB81D34821FE3C460F14CB964434C6A23F4E6EA,
+	ReaderWriterLockSlim_TryEnterReadLock_m8F3763D7B2516130AD02F7E09AD088C366EF3D11,
+	ReaderWriterLockSlim_TryEnterReadLockCore_m5756F423F2155A6B414F8C40A249143492E1C3B5,
+	ReaderWriterLockSlim_ExitReadLock_m49891BB1D1FA606B9EBD354D575D7F1ECBD53E87,
+	ReaderWriterLockSlim_LazyCreateEvent_m4D2DFCB1AD5A749408939AA0D12B7C3959A36923,
+	ReaderWriterLockSlim_WaitOnEvent_mFF3B7C48254F2742AED6916DD059ACB2240A78B3,
+	ReaderWriterLockSlim_ExitAndWakeUpAppropriateWaiters_m43EB7B2724EC44E2F0B4E3CA6A51752345978E90,
+	ReaderWriterLockSlim_ExitAndWakeUpAppropriateWaitersPreferringWriters_m2EE29EE42CEA6142CA8C741BC74CFBE4483E5CA8,
+	ReaderWriterLockSlim_ExitAndWakeUpAppropriateReadWaiters_m19BFCEE3D042633B1F106BBD76E28DA69271606D,
+	ReaderWriterLockSlim_SetWritersWaiting_mEBE801FBDAFD33AF1B8E3CE71F0AD0C9CDA69902,
+	ReaderWriterLockSlim_ClearWritersWaiting_m7587122D0BAD6384DE3B38DB6BF7D38B364A4935,
+	ReaderWriterLockSlim_SetUpgraderWaiting_m5C7C47EBCA531D201CA72CB27D0548F71375BCAC,
+	ReaderWriterLockSlim_ClearUpgraderWaiting_m214E8B0780542079CB3D9D5C28C58C47A72E91E4,
+	ReaderWriterLockSlim_GetNumReaders_m300EBD28D2300167E37C0F67AD04AF7BE87C1DB1,
+	ReaderWriterLockSlim_EnterMyLock_mDB590C9A0A55830B1C347DAB0A3F4972E9F0DE59,
+	ReaderWriterLockSlim_EnterMyLockSpin_mC785B7BB91A152B37FF1115AFA5D752AC6DBE9F6,
+	ReaderWriterLockSlim_ExitMyLock_mA7506AF402F9AA6241ABA227DABFF68BB9D5FF7B,
+	ReaderWriterLockSlim_SpinWait_mFFFC84F8CF5AA3863BEE5CD292FE63B335A5D11B,
+	ReaderWriterLockSlim_Dispose_mCC076068D0C8A9EF92177147A713C71006A9CD05,
+	ReaderWriterLockSlim_Dispose_mA894FFFD0829F6CEDD8318482F57D2A5FCFD5661,
+	ReaderWriterLockSlim_get_IsReadLockHeld_mFF28229B26471192A3B8B195EE1C85509B5EA029,
+	ReaderWriterLockSlim_get_IsUpgradeableReadLockHeld_mBDFD4377C488FD48B7E211ADE5F5CDEEFD78E1CF,
+	ReaderWriterLockSlim_get_IsWriteLockHeld_m2F8585FFD00B88CA788152EA5E0BF460B28782A7,
+	ReaderWriterLockSlim_get_RecursiveReadCount_mA7709352D9817A46AFE62AD5CF94631E15FB1067,
+	ReaderWriterLockSlim_get_RecursiveUpgradeCount_mFF4BF2756AE36B12E7822FAE7BAB8B7CDEF4D41D,
+	ReaderWriterLockSlim_get_RecursiveWriteCount_m51147A8E3CA34D7D6EDC8986BB8518AE7CE16145,
+	ReaderWriterLockSlim_get_WaitingReadCount_mD79E93CABC9BFBA4AB306193DDF8CE90F1818C92,
+	ReaderWriterLockSlim_get_WaitingUpgradeCount_m13892A21F7EF1D7ED202D186B2E7B2B6C400F388,
+	ReaderWriterLockSlim_get_WaitingWriteCount_m8FE677BDB0E776125691C0A4C1A74B5B8637D246,
+	TimeoutTracker__ctor_mBFE73B99C5BBB93D251DF9731B9C5D824F30CDCE,
+	TimeoutTracker_get_RemainingMilliseconds_mDAA8A0E545F8E28D3688095CA346B0A04337BC23,
+	TimeoutTracker_get_IsExpired_m5E08DCC01117EF66ADEBA5472B27833577289813,
 };
-static const int32_t s_InvokerIndices[287] = 
+extern void TimeoutTracker__ctor_mBFE73B99C5BBB93D251DF9731B9C5D824F30CDCE_AdjustorThunk (void);
+extern void TimeoutTracker_get_RemainingMilliseconds_mDAA8A0E545F8E28D3688095CA346B0A04337BC23_AdjustorThunk (void);
+extern void TimeoutTracker_get_IsExpired_m5E08DCC01117EF66ADEBA5472B27833577289813_AdjustorThunk (void);
+static Il2CppTokenAdjustorThunkPair s_adjustorThunks[3] = 
 {
-	25259,
-	29190,
-	29190,
-	30935,
-	30935,
+	{ 0x06000146, TimeoutTracker__ctor_mBFE73B99C5BBB93D251DF9731B9C5D824F30CDCE_AdjustorThunk },
+	{ 0x06000147, TimeoutTracker_get_RemainingMilliseconds_mDAA8A0E545F8E28D3688095CA346B0A04337BC23_AdjustorThunk },
+	{ 0x06000148, TimeoutTracker_get_IsExpired_m5E08DCC01117EF66ADEBA5472B27833577289813_AdjustorThunk },
+};
+static const int32_t s_InvokerIndices[328] = 
+{
+	10113,
+	8535,
+	10113,
+	10113,
+	11459,
+	11459,
 	-1,
 	-1,
 	-1,
@@ -370,8 +462,8 @@ static const int32_t s_InvokerIndices[287] =
 	-1,
 	-1,
 	-1,
-	25230,
-	25230,
+	8515,
+	8515,
 	-1,
 	-1,
 	-1,
@@ -380,8 +472,8 @@ static const int32_t s_InvokerIndices[287] =
 	-1,
 	-1,
 	-1,
-	28979,
-	28979,
+	9981,
+	9981,
 	-1,
 	-1,
 	-1,
@@ -504,14 +596,14 @@ static const int32_t s_InvokerIndices[287] =
 	-1,
 	-1,
 	-1,
-	13586,
-	18060,
-	17618,
-	17759,
-	18060,
-	17833,
-	17833,
-	17833,
+	4140,
+	4965,
+	4729,
+	4803,
+	4965,
+	4830,
+	4830,
+	4830,
 	-1,
 	-1,
 	-1,
@@ -542,22 +634,22 @@ static const int32_t s_InvokerIndices[287] =
 	-1,
 	-1,
 	-1,
-	17759,
-	31043,
-	29190,
-	17833,
-	17833,
-	17833,
-	29190,
-	17833,
+	4803,
+	11547,
+	10113,
+	4830,
+	4830,
+	4830,
+	10113,
+	4830,
 	-1,
 	-1,
-	30935,
-	5584,
-	6839,
-	13586,
-	9597,
-	28974,
+	11459,
+	2420,
+	2622,
+	4140,
+	3169,
+	9976,
 	-1,
 	-1,
 	-1,
@@ -617,6 +709,46 @@ static const int32_t s_InvokerIndices[287] =
 	-1,
 	-1,
 	-1,
+	4965,
+	4965,
+	4965,
+	4140,
+	9785,
+	3201,
+	3679,
+	4965,
+	3169,
+	3468,
+	3468,
+	4965,
+	2414,
+	838,
+	4965,
+	4965,
+	4965,
+	4965,
+	4965,
+	4965,
+	4965,
+	4954,
+	4965,
+	4965,
+	4965,
+	10561,
+	4965,
+	4069,
+	4729,
+	4729,
+	4729,
+	4803,
+	4803,
+	4803,
+	4803,
+	4803,
+	4803,
+	4140,
+	4803,
+	4729,
 };
 static const Il2CppTokenRangePair s_rgctxIndices[79] = 
 {
@@ -648,57 +780,57 @@ static const Il2CppTokenRangePair s_rgctxIndices[79] =
 	{ 0x0200002D, { 570, 5 } },
 	{ 0x02000031, { 575, 63 } },
 	{ 0x02000034, { 638, 7 } },
-	{ 0x06000006, { 0, 12 } },
-	{ 0x06000007, { 12, 14 } },
-	{ 0x06000008, { 26, 5 } },
-	{ 0x06000009, { 31, 7 } },
-	{ 0x0600000A, { 38, 4 } },
-	{ 0x0600000B, { 42, 5 } },
-	{ 0x0600000C, { 47, 2 } },
-	{ 0x0600000D, { 49, 3 } },
-	{ 0x0600000E, { 52, 6 } },
-	{ 0x0600000F, { 58, 6 } },
-	{ 0x06000010, { 64, 4 } },
-	{ 0x06000011, { 68, 2 } },
-	{ 0x06000012, { 70, 3 } },
-	{ 0x06000013, { 73, 3 } },
-	{ 0x06000014, { 76, 4 } },
-	{ 0x06000015, { 80, 3 } },
-	{ 0x06000016, { 83, 4 } },
-	{ 0x06000017, { 87, 2 } },
-	{ 0x06000018, { 89, 3 } },
-	{ 0x06000019, { 92, 3 } },
-	{ 0x0600001A, { 95, 10 } },
-	{ 0x0600001B, { 105, 6 } },
-	{ 0x0600001C, { 111, 3 } },
-	{ 0x0600001D, { 114, 6 } },
-	{ 0x0600001E, { 120, 15 } },
-	{ 0x0600001F, { 135, 2 } },
-	{ 0x06000020, { 137, 3 } },
-	{ 0x06000021, { 140, 2 } },
-	{ 0x06000022, { 142, 3 } },
-	{ 0x06000023, { 145, 9 } },
-	{ 0x06000024, { 154, 7 } },
-	{ 0x06000025, { 161, 9 } },
-	{ 0x06000026, { 170, 7 } },
-	{ 0x06000027, { 177, 9 } },
-	{ 0x06000028, { 186, 7 } },
-	{ 0x0600002B, { 193, 4 } },
-	{ 0x0600002C, { 197, 3 } },
-	{ 0x0600002D, { 200, 7 } },
-	{ 0x0600002E, { 207, 7 } },
-	{ 0x0600002F, { 214, 5 } },
-	{ 0x06000030, { 219, 7 } },
-	{ 0x06000031, { 226, 6 } },
-	{ 0x06000032, { 232, 10 } },
-	{ 0x06000035, { 242, 3 } },
-	{ 0x06000045, { 265, 4 } },
-	{ 0x0600004A, { 281, 4 } },
-	{ 0x0600004F, { 302, 4 } },
-	{ 0x06000055, { 326, 6 } },
-	{ 0x0600005A, { 349, 6 } },
-	{ 0x0600005F, { 377, 6 } },
-	{ 0x060000C1, { 511, 4 } },
+	{ 0x06000007, { 0, 12 } },
+	{ 0x06000008, { 12, 14 } },
+	{ 0x06000009, { 26, 5 } },
+	{ 0x0600000A, { 31, 7 } },
+	{ 0x0600000B, { 38, 4 } },
+	{ 0x0600000C, { 42, 5 } },
+	{ 0x0600000D, { 47, 2 } },
+	{ 0x0600000E, { 49, 3 } },
+	{ 0x0600000F, { 52, 6 } },
+	{ 0x06000010, { 58, 6 } },
+	{ 0x06000011, { 64, 4 } },
+	{ 0x06000012, { 68, 2 } },
+	{ 0x06000013, { 70, 3 } },
+	{ 0x06000014, { 73, 3 } },
+	{ 0x06000015, { 76, 4 } },
+	{ 0x06000016, { 80, 3 } },
+	{ 0x06000017, { 83, 4 } },
+	{ 0x06000018, { 87, 2 } },
+	{ 0x06000019, { 89, 3 } },
+	{ 0x0600001A, { 92, 3 } },
+	{ 0x0600001B, { 95, 10 } },
+	{ 0x0600001C, { 105, 6 } },
+	{ 0x0600001D, { 111, 3 } },
+	{ 0x0600001E, { 114, 6 } },
+	{ 0x0600001F, { 120, 15 } },
+	{ 0x06000020, { 135, 2 } },
+	{ 0x06000021, { 137, 3 } },
+	{ 0x06000022, { 140, 2 } },
+	{ 0x06000023, { 142, 3 } },
+	{ 0x06000024, { 145, 9 } },
+	{ 0x06000025, { 154, 7 } },
+	{ 0x06000026, { 161, 9 } },
+	{ 0x06000027, { 170, 7 } },
+	{ 0x06000028, { 177, 9 } },
+	{ 0x06000029, { 186, 7 } },
+	{ 0x0600002C, { 193, 4 } },
+	{ 0x0600002D, { 197, 3 } },
+	{ 0x0600002E, { 200, 7 } },
+	{ 0x0600002F, { 207, 7 } },
+	{ 0x06000030, { 214, 5 } },
+	{ 0x06000031, { 219, 7 } },
+	{ 0x06000032, { 226, 6 } },
+	{ 0x06000033, { 232, 10 } },
+	{ 0x06000036, { 242, 3 } },
+	{ 0x06000046, { 265, 4 } },
+	{ 0x0600004B, { 281, 4 } },
+	{ 0x06000050, { 302, 4 } },
+	{ 0x06000056, { 326, 6 } },
+	{ 0x0600005B, { 349, 6 } },
+	{ 0x06000060, { 377, 6 } },
+	{ 0x060000C2, { 511, 4 } },
 };
 extern const uint32_t g_rgctx_IEnumerable_1_t3AF8F557A5415169D4617DBCB1364D33309B7891;
 extern const uint32_t g_rgctx_Func_2_tD2F5833EE6E6464E0A5DF0D394FCC308F9B20D62;
@@ -1997,10 +2129,10 @@ IL2CPP_EXTERN_C const Il2CppCodeGenModule g_System_Core_CodeGenModule;
 const Il2CppCodeGenModule g_System_Core_CodeGenModule = 
 {
 	"System.Core.dll",
-	287,
+	328,
 	s_methodPointers,
-	0,
-	NULL,
+	3,
+	s_adjustorThunks,
 	s_InvokerIndices,
 	0,
 	NULL,

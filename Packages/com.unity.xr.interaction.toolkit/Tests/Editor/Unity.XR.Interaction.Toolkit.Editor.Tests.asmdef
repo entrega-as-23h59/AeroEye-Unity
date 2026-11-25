@@ -1,0 +1,39 @@
+{
+    "name": "Unity.XR.Interaction.Toolkit.Editor.Tests",
+    "rootNamespace": "UnityEditor.XR.Interaction.Toolkit.Editor.Tests",
+    "references": [
+        "Unity.XR.Interaction.Toolkit",
+        "Unity.XR.Interaction.Toolkit.Editor",
+        "Unity.XR.Interaction.Toolkit.Tests",
+        "Unity.XR.CoreUtils"
+    ],
+    "optionalUnityReferences": [
+        "TestAssemblies"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": true,
+    "precompiledReferences": [
+        "nunit.framework.dll"
+    ],
+    "autoReferenced": false,
+    "defineConstraints": [
+        "UNITY_INCLUDE_TESTS"
+    ],
+    "versionDefines": [
+        {
+            "name": "com.unity.xr.hands",
+            "expression": "1.1.0",
+            "define": "XR_HANDS_1_1_OR_NEWER"
+        },
+        {
+            "name": "com.unity.xr.hands",
+            "expression": "1.8.0-pre.1",
+            "define": "XR_HANDS_1_8_OR_NEWER"
+        }
+    ],
+    "noEngineReferences": false
+}
