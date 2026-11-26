@@ -9,19 +9,24 @@ public class AprilTagAnchorManager : MonoBehaviour
     public Camera detectorCamera;
     public RenderTexture detectorRT;
 
-    [Header("Head Tracking Follow")]
-    [Tooltip("Assign Main Camera so DetectorCamera rotates where you look")]
+    [Header("Vertical Head Tracking Follow")]
+    [Tooltip("Assign Main Camera so DetectorCamera tilts vertically (pitch) with your head")]
     public Transform headCameraTransform;
-    public bool followHeadRotation = true;
+    public bool followVerticalRotationOnly = true;
 
-    [Header("Tag Settings")]
-    [Tooltip("Physical width of the black square border in meters (e.g., 0.20 = 20cm)")]
-    public float tagSizeMeters = 0.20f;
+    [Header("Tag & Panel Distance Settings")]
+    public float tagSizeMeters = 0.80f;
+    public float panelDistanceMeters = 4.0f;
     [Range(1, 4)]
     public int decimation = 2;
 
+    [Header("Anti-Drift Stabilization")]
+    [Tooltip("Ignore small detection shifts below this distance (meters) so the panel stays rock-solid")]
+    public float positionDeadzoneMeters = 0.08f;
+    [Tooltip("Ignore small angle jitter below this threshold (degrees)")]
+    public float rotationDeadzoneDegrees = 3.0f;
+
     [Header("Annotation Anchor")]
-    [Tooltip("Prefab with a large invisible BoxCollider plane for raycast drawing")]
     public GameObject tagAnchorPrefab;
 
     [Header("Debug Logs")]
@@ -33,6 +38,8 @@ public class AprilTagAnchorManager : MonoBehaviour
     private Color32[] pixelBuffer;
     private Dictionary<int, Transform> activeAnchors = new Dictionary<int, Transform>();
     private float nextLogTime = 0f;
+    private float fixedYaw;
+    private float fixedRoll;
 
     void Start()
     {
@@ -45,8 +52,12 @@ public class AprilTagAnchorManager : MonoBehaviour
         if (headCameraTransform == null && Camera.main != null)
         {
             headCameraTransform = Camera.main.transform;
-            Debug.Log($"[AprilTag] Auto-assigned Head Camera: {headCameraTransform.name}");
         }
+
+        // Remember the initial horizontal (Y) and roll (Z) angles set on DetectorCamera
+        Vector3 initialEuler = detectorCamera.transform.eulerAngles;
+        fixedYaw = initialEuler.y;
+        fixedRoll = initialEuler.z;
 
         int w = detectorRT.width;
         int h = detectorRT.height;
@@ -54,21 +65,23 @@ public class AprilTagAnchorManager : MonoBehaviour
         detector = new TagDetector(w, h, decimation);
         readbackTex = new Texture2D(w, h, TextureFormat.RGBA32, false);
         pixelBuffer = new Color32[w * h];
-
-        Debug.Log($"[AprilTag] ✅ Initialized detector ({w}x{h}, decimation={decimation}, tagSize={tagSizeMeters}m). Note: jp.keijiro.apriltag expects tagStandard41h12!");
     }
 
     void Update()
     {
         if (detector == null || detectorRT == null || detectorCamera == null) return;
 
-        // Sync DetectorCamera rotation with Main Camera if enabled
-        if (followHeadRotation && headCameraTransform != null)
+        // Keep DetectorCamera centered at the 360 Skybox origin
+        detectorCamera.transform.localPosition = Vector3.zero;
+
+        // Follow ONLY vertical pitch (X-axis) from Main Camera; keep Y and Z fixed
+        if (followVerticalRotationOnly && headCameraTransform != null)
         {
-            detectorCamera.transform.rotation = headCameraTransform.rotation;
+            float headPitchX = headCameraTransform.eulerAngles.x;
+            detectorCamera.transform.rotation = Quaternion.Euler(headPitchX, fixedYaw, fixedRoll);
         }
 
-        // 1. Read pixels from the rectilinear RenderTexture
+        // 1. Read pixels from DetectorRT
         RenderTexture currentRT = RenderTexture.active;
         RenderTexture.active = detectorRT;
         readbackTex.ReadPixels(new Rect(0, 0, detectorRT.width, detectorRT.height), 0, 0);
@@ -77,7 +90,7 @@ public class AprilTagAnchorManager : MonoBehaviour
 
         pixelBuffer = readbackTex.GetPixels32();
 
-        // 2. Run AprilTag detection (expects Horizontal FOV in degrees)
+        // 2. Run AprilTag detection
         float horizontalFov = Camera.VerticalToHorizontalFieldOfView(
             detectorCamera.fieldOfView,
             detectorCamera.aspect
@@ -89,6 +102,12 @@ public class AprilTagAnchorManager : MonoBehaviour
         {
             detectedCount++;
 
+            // Convert tag center from detectorCamera space to World Space
+            Vector3 rawWorldPos = detectorCamera.transform.TransformPoint(tag.Position);
+            Vector3 rayDir = (rawWorldPos - detectorCamera.transform.position).normalized;
+            Vector3 targetPos = detectorCamera.transform.position + rayDir * panelDistanceMeters;
+            Quaternion targetRot = detectorCamera.transform.rotation * tag.Rotation;
+
             if (!activeAnchors.TryGetValue(tag.ID, out Transform anchor))
             {
                 GameObject anchorObj = tagAnchorPrefab != null
@@ -97,33 +116,35 @@ public class AprilTagAnchorManager : MonoBehaviour
 
                 anchorObj.name = $"Anchor_Tag_{tag.ID}";
                 anchor = anchorObj.transform;
+                anchor.position = targetPos;
+                anchor.rotation = targetRot;
                 activeAnchors[tag.ID] = anchor;
 
-                Debug.Log($"[AprilTag] 🎯 NEW TAG DETECTED! ID={tag.ID} | Spawned {anchorObj.name}");
+                if (enableDebugLogs)
+                    Debug.Log($"[AprilTag] 🎯 Locked Anchor_Tag_{tag.ID} at {targetPos:F2}");
             }
-
-            // Convert tag pose from detectorCamera local space to Unity World Space
-            Vector3 worldPos = detectorCamera.transform.TransformPoint(tag.Position);
-            Quaternion worldRot = detectorCamera.transform.rotation * tag.Rotation;
-
-            anchor.position = Vector3.Lerp(anchor.position, worldPos, Time.deltaTime * 15f);
-            anchor.rotation = Quaternion.Slerp(anchor.rotation, worldRot, Time.deltaTime * 15f);
-
-            if (enableDebugLogs && Time.time >= nextLogTime)
+            else
             {
-                Debug.Log($"[AprilTag] 📍 Tracking ID={tag.ID} | WorldPos={anchor.position:F2} | CamRot={detectorCamera.transform.eulerAngles:F0}");
+                float posDelta = Vector3.Distance(anchor.position, targetPos);
+                float rotDelta = Quaternion.Angle(anchor.rotation, targetRot);
+
+                if (posDelta > positionDeadzoneMeters)
+                {
+                    anchor.position = Vector3.Lerp(anchor.position, targetPos, Time.deltaTime * 10f);
+                }
+                if (rotDelta > rotationDeadzoneDegrees)
+                {
+                    anchor.rotation = Quaternion.Slerp(anchor.rotation, targetRot, Time.deltaTime * 10f);
+                }
             }
         }
 
-        // Periodic status log when scanning
         if (enableDebugLogs && Time.time >= nextLogTime)
         {
             nextLogTime = Time.time + logIntervalSeconds;
-            if (detectedCount == 0)
+            if (detectedCount == 0 && activeAnchors.Count == 0)
             {
-                // Sample center pixel to confirm DetectorRT is not pure black/blank
-                Color32 centerPixel = pixelBuffer[pixelBuffer.Length / 2];
-                Debug.Log($"[AprilTag] 🔍 Scanning... 0 tags found | CamYaw={detectorCamera.transform.eulerAngles.y:F0}° Pitch={detectorCamera.transform.eulerAngles.x:F0}° | CenterPixelRGB=({centerPixel.r},{centerPixel.g},{centerPixel.b})");
+                Debug.Log($"[AprilTag] 🔍 Scanning... 0 tags found | CamRot={detectorCamera.transform.eulerAngles:F0}");
             }
         }
     }
