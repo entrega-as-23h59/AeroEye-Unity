@@ -5121,7 +5121,10 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 657184242161839408, guid: d6878e1999eb4b44a9f5a263af86c185, type: 3}
       insertIndex: -1
       addedObject: {fileID: 986423100}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2218496723442559054, guid: d6878e1999eb4b44a9f5a263af86c185, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1878612007}
   m_SourcePrefab: {fileID: 100100000, guid: d6878e1999eb4b44a9f5a263af86c185, type: 3}
 --- !u!1 &1119154435
 GameObject:
@@ -9639,6 +9642,78 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 1
   m_TargetDisplay: 0
+--- !u!1 &1878612000 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2218496723442559054, guid: d6878e1999eb4b44a9f5a263af86c185, type: 3}
+  m_PrefabInstance: {fileID: 1085820342}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1878612007
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1878612000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3387ed101c8c1ffe93eb0260e9f4ff8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GrabMovementInput
+  leftThumbstick:
+    m_UseReference: 1
+    m_Action:
+      m_Name: Left Thumbstick
+      m_Type: 0
+      m_ExpectedControlType: Vector2
+      m_Id: 2d398eec-0df1-4e71-b88e-19ca231fcc7f
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+      m_Priority: 0
+    m_Reference: {fileID: 6972639530819350904, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  rightButtonA:
+    m_UseReference: 0
+    m_Action:
+      m_Name: Right Button A
+      m_Type: 1
+      m_ExpectedControlType: Button
+      m_Id: 68de530f-4700-4c5a-9a38-ba4260d3a834
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings:
+      - m_Name: 
+        m_Id: 33fa70c4-69d8-47ab-b808-5c6864fb72b2
+        m_Path: <XRController>{RightHand}/primaryButton
+        m_Interactions: 
+        m_Processors: 
+        m_Groups: 
+        m_Action: Right Button A
+        m_Flags: 0
+      m_Flags: 0
+      m_Priority: 0
+    m_Reference: {fileID: 0}
+  rightButtonB:
+    m_UseReference: 0
+    m_Action:
+      m_Name: Right Button B
+      m_Type: 1
+      m_ExpectedControlType: Button
+      m_Id: 8979e1fc-cf32-4614-ac10-909a1b2c9cce
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings:
+      - m_Name: 
+        m_Id: a3f0b09c-a524-4d0f-ab34-2b0446d7a93c
+        m_Path: <XRController>{RightHand}/secondaryButton
+        m_Interactions: 
+        m_Processors: 
+        m_Groups: 
+        m_Action: Right Button B
+        m_Flags: 0
+      m_Flags: 0
+      m_Priority: 0
+    m_Reference: {fileID: 0}
 --- !u!1 &1895072591
 GameObject:
   m_ObjectHideFlags: 0
