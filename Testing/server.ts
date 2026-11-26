@@ -27,7 +27,7 @@ const ffmpeg = spawn(
     "ffmpeg",
     "-re",
     "-stream_loop", "-1",
-    "-i", "360london_on_tower_bridge.mp4",
+    "-i", "tag1.mp4",
     "-vf", `scale=${WIDTH}:-2:flags=lanczos`,
     "-r", String(FPS),
     "-c:v", "libvpx",
