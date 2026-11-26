@@ -2718,7 +2718,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &651539020
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6921,6 +6921,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd6d563c8de46c2f9b3bc836a3fd8ae3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  cubeRenderer: {fileID: 0}
 --- !u!1 &1377955291
 GameObject:
   m_ObjectHideFlags: 0
@@ -9790,7 +9791,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3387ed101c8c1ffe93eb0260e9f4ff8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GrabMovementInput
-  serverUrl: ws://localhost:8080/ws
+  serverUrl: ws://localhost:8080/ws/movement
   sendRateHz: 30
   leftThumbstick:
     m_UseReference: 1
@@ -9830,6 +9831,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fd7885ada95cb331980568b5648948d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TagAnnotationPlacer
+  drawServerUrl: ws://localhost:8080/ws/draw
   rightHandRayOrigin: {fileID: 51925350}
   drawingSurfaceMask:
     serializedVersion: 2
@@ -9857,6 +9859,7 @@ MonoBehaviour:
     m_Reference: {fileID: 0}
   markerPrefab: {fileID: 0}
   lineMaterial: {fileID: 2100000, guid: c57e838afb115fe9190bb308c4b6873e, type: 2}
+  enableDebugLogs: 1
 --- !u!114 &1878612015
 MonoBehaviour:
   m_ObjectHideFlags: 0
